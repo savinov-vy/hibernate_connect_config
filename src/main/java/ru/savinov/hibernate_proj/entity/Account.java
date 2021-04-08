@@ -16,6 +16,14 @@ public class Account {
 
     private Integer age;
 
+    public Account(String name, Integer age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public Account() {
+    }
+
     public Long getAccountId() {
         return accountId;
     }

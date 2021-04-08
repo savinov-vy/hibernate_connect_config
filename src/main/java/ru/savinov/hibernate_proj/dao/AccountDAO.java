@@ -26,6 +26,11 @@ public class AccountDAO {
         return account;
     }
 
+    /**
+     * Передаем класс Объект которого хотим найти и id
+     * @param id
+     * @return Account
+     */
     public Account findById(Long id) {
         Session session = sessionFactory.openSession();
         Account account = session.find(Account.class, id);
