@@ -1,9 +1,7 @@
 package ru.savinov.hibernate_proj.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Account {
@@ -15,6 +13,9 @@ public class Account {
     private String name;
 
     private Integer age;
+
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<Bill> bills;
 
     public Account(String name, Integer age) {
         this.name = name;
@@ -46,6 +47,14 @@ public class Account {
 
     public void setAge(Integer age) {
         this.age = age;
+    }
+
+    public List<Bill> getBills() {
+        return bills;
+    }
+
+    public void setBills(List<Bill> bills) {
+        this.bills = bills;
     }
 
     @Override
