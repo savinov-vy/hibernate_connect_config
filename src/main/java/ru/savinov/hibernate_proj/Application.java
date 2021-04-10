@@ -42,10 +42,10 @@ public class Application implements CommandLineRunner {
 
         Long accountId = savedAccount.getAccountId();
         Account accountFromDB = accountDAO.findById(accountId);
-        List<Bill> billsFromDB = accountFromDB.getBills();
+//        List<Bill> billsFromDB = accountFromDB.getBills();  //сессия закроется и счета получить будет не возможно (FetchType.LAZY)
 
         System.out.println(accountFromDB);
-        System.out.println(billsFromDB);
+//        System.out.println(billsFromDB);
 
     }
 }
